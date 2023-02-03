@@ -15,8 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.views.defaults import server_error
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('video.urls'))
+    path('', include('video.urls')),
+    path('error', server_error)
 ]
